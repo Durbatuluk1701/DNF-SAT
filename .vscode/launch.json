@@ -10,8 +10,59 @@
       "name": "Launch LLDB",
       "preLaunchTask": "rust: cargo build",
       "program": "${workspaceFolder}/target/debug/converter_red_mem",
-      "args": ["/home/w732t351/repos/dnf-sat/test_sat_7.cnf"],
+      "args": ["/home/w732t351/repos/dnf-sat/test_suite/test_MC_5.cnf"],
       "cwd": "${workspaceFolder}"
+    },
+    // {
+    //   "name": "(gdb) Launch",
+    //   "type": "cppdbg",
+    //   "request": "launch",
+    //   "program": "${workspaceRoot}/src/test",
+    //   "preLaunchTask": "C/C++: g++ build active file",
+    //   "args": ["/home/w732t351/repos/dnf-sat/test_suite/test_MC_2.cnf"],
+    //   "stopAtEntry": false,
+    //   "cwd": "${fileDirname}",
+    //   "environment": [],
+    //   "externalConsole": false,
+    //   "MIMode": "gdb",
+    //   "setupCommands": [
+    //     {
+    //       "description": "Enable pretty-printing for gdb",
+    //       "text": "-enable-pretty-printing",
+    //       "ignoreFailures": true
+    //     },
+    //     {
+    //       "description": "Set Disassembly Flavor to Intel",
+    //       "text": "-gdb-set disassembly-flavor intel",
+    //       "ignoreFailures": true
+    //     }
+    //   ]
+    // }
+    {
+      "name": "(gdb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      // "program": "${workspaceRoot}/src/converter",
+      "preLaunchTask": "C/C++: g++ build active file",
+      "args": ["/home/w732t351/repos/dnf-sat/test_suite/test_MC_2.cnf"],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ]
     }
   ]
 }
